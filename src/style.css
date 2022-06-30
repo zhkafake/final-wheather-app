@@ -1,7 +1,33 @@
+ul {
+  padding: 0;
+  margin: 0;
+}
+
 .wheather-list {
   list-style-type: none;
 }
 .fa-solid {
   font-size: 80px;
   color: gold;
+}
+.weather-app {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid rgb(210, 239, 246);
+  border-radius: 10px;
+}
+.btn-outline-success {
+  border-color: black;
+  color: black;
+  background-color: aliceblue;
+}
+.btn-outline-success:hover {
+  background-color: gold;
+  border-color: aliceblue;
+  color: black;
+}
+.about {
+  max-width: 700px;
+  margin: 0 auto;
 }
