@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -43,13 +44,16 @@
           <div class="col-8">
             <ul class="wheather-list">
               <li><h2>New York, USA</h2></li>
-              <li>Wednesday 15:00, Clear</li>
-              <li>Humidity: 40%, Wind: 4km/h</li>
+              <li id="time">Wednesday 15:00, Clear</li>
+              <li>
+                Humidity: <span id="humidity">40</span>%, Wind:
+                <span id="wind-speed">4</span>km/h
+              </li>
             </ul>
           </div>
           <div class="col-4">
             <h3>
-              <i class="fa-solid fa-sun sun"></i><span class="tempo">22</span
+              <i class="fa-solid fa-sun sun"></i><span id="tempo">22</span
               ><span class="units">°C|°F</span>
             </h3>
           </div>
