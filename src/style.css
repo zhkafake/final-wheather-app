@@ -2,7 +2,7 @@ ul {
   padding: 0;
   margin: 0;
 }
-li {
+.condition {
   text-transform: capitalize;
 }
 .wheather-list {

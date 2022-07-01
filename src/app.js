@@ -1,3 +1,20 @@
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
+
 function displayTemperature(response) {
   let humidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#wind-speed");
@@ -9,6 +26,7 @@ function displayTemperature(response) {
   let wheatherData = response.data.weather[0].description;
   let city = document.querySelector("#picked-city");
   let countryElement = document.querySelector("#country");
+  let dateElement = document.querySelector("#date");
   city.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
   wheatherConditions.innerHTML = wheatherData;
@@ -16,6 +34,7 @@ function displayTemperature(response) {
   windSpeed.innerHTML = windData;
   temperature.innerHTML = actualtemp;
   axios.get(apiUrl).then(displayTemperature);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 let city = "Kyiv";
 let apiKey = "f9dcd16921b5c743196e0ded07686e68";
