@@ -31,6 +31,13 @@ ul {
   border-color: aliceblue;
   color: black;
 }
+.btn-outline-success:focus {
+  background-color:  border-color: black;
+  color: black;
+  background-color: aliceblue;
+
+  
+}
 .about {
   max-width: 700px;
   margin: 0 auto;

@@ -16,6 +16,10 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
+  let units = "metric";
+  let city = document.querySelector("#picked-city");
+  let apiKey = "f9dcd16921b5c743196e0ded07686e68";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   let humidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#wind-speed");
   let temperature = document.querySelector("#tempo");
@@ -24,13 +28,12 @@ function displayTemperature(response) {
   let humidData = Math.round(response.data.main.humidity);
   let wheatherConditions = document.querySelector("#condition");
   let wheatherData = response.data.weather[0].description;
-  let city = document.querySelector("#picked-city");
   let countryElement = document.querySelector("#country");
   let dateElement = document.querySelector("#date");
   let pictureElement = document.querySelector("#picture");
   pictureElement.setAttribute(
     "src",
-    `http://openwheathermap.org/img/wh/${response.data.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   pictureElement.setAttribute("alt", response.data.weather[0].description);
   city.innerHTML = response.data.name;
@@ -39,13 +42,19 @@ function displayTemperature(response) {
   humidity.innerHTML = humidData;
   windSpeed.innerHTML = windData;
   temperature.innerHTML = actualtemp;
-  axios.get(apiUrl).then(displayTemperature);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
-let city = "Kyiv";
-let apiKey = "f9dcd16921b5c743196e0ded07686e68";
-let units = "metric";
-
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "f9dcd16921b5c743196e0ded07686e68";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#cityTyped");
+  search(cityInputElement.value);
+}
+search("Kyiv");
+let searchForm = document.querySelector("#searchEngine");
+searchForm.addEventListener("submit", handleSubmit);

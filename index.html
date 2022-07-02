@@ -23,12 +23,14 @@
       <nav class="navbar fixed-top" style="background-color: #e3f2fd">
         <div class="container-fluid">
           <a class="navbar-brand"> Wheather forecast</a>
-          <form class="d-flex" role="search">
+          <form class="d-flex" role="search" id="searchEngine">
             <input
               class="form-control me-2"
               type="search"
               placeholder="Enter a city name💛"
               aria-label="Search"
+              id="cityTyped"
+              autocomplete="on"
             />
             <button class="btn btn-outline-success" type="submit">
               Search
