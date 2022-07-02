@@ -27,6 +27,12 @@ function displayTemperature(response) {
   let city = document.querySelector("#picked-city");
   let countryElement = document.querySelector("#country");
   let dateElement = document.querySelector("#date");
+  let pictureElement = document.querySelector("#picture");
+  pictureElement.setAttribute(
+    "src",
+    `http://openwheathermap.org/img/wh/${response.data.weather[0].icon}@2x.png`
+  );
+  pictureElement.setAttribute("alt", response.data.weather[0].description);
   city.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
   wheatherConditions.innerHTML = wheatherData;
