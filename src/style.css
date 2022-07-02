@@ -12,6 +12,10 @@ ul {
   font-size: 80px;
   color: gold;
 }
+.links{color: rgb(0, 0, 0);
+text-decoration: none;}
+.links:focus{color: cornflowerblue;}
+.links:hover {color: rgb(0, 0, 0)}
 .weather-app {
   max-width: 94%;
   margin-top: 20px;
@@ -35,8 +39,6 @@ ul {
   background-color:  border-color: black;
   color: black;
   background-color: aliceblue;
-
-  
 }
 .about {
   max-width: 700px;
