@@ -2,6 +2,9 @@ ul {
   padding: 0;
   margin: 0;
 }
+body {
+  background: rgb(254, 254, 200);
+}
 .condition {
   text-transform: capitalize;
 }
@@ -29,7 +32,7 @@ ul {
   padding: 20px;
   border: 1px solid rgb(210, 239, 246);
   border-radius: 10px;
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background-color: white;
 }
 .btn-outline-success {
   border-color: black;
