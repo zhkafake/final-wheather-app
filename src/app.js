@@ -14,7 +14,13 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-
+function getForecast(coordinates) {
+  let apiKey = "f9dcd16921b5c743196e0ded07686e68";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric
+`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayTemperature(response) {
   let units = "metric";
   let city = document.querySelector("#picked-city");
@@ -45,6 +51,7 @@ function displayTemperature(response) {
   windSpeed.innerHTML = windData;
   temperature.innerHTML = actualtemp;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  getForecast(response.data.coord);
 }
 function search(city) {
   let apiKey = "f9dcd16921b5c743196e0ded07686e68";
@@ -73,7 +80,7 @@ function showCelsiusTemperature(event) {
   let temperature = document.querySelector("#tempo");
   temperature.innerHTML = celsiusTemperature;
 }
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row"/>`;
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -106,4 +113,3 @@ let celsiusLink = document.querySelector("#celsius");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 search("Kyiv");
-displayForecast();
