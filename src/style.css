@@ -12,14 +12,20 @@ ul {
   font-size: 80px;
   color: gold;
 }
-.links{color: rgb(0, 0, 0);
-text-decoration: none;}
-.links:focus{color: cornflowerblue;}
-.links:hover {color: rgb(0, 0, 0)}
+.links {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.links:focus {
+  color: cornflowerblue;
+}
+.links:hover {
+  color: rgb(0, 0, 0);
+}
 .weather-app {
   max-width: 94%;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   padding: 20px;
   border: 1px solid rgb(210, 239, 246);
   border-radius: 10px;
@@ -36,11 +42,26 @@ text-decoration: none;}
   color: black;
 }
 .btn-outline-success:focus {
-  background-color:  border-color: black;
+  border-color: black;
   color: black;
   background-color: aliceblue;
 }
 .about {
   max-width: 700px;
+  margin: 0 auto;
+}
+.forecast-style {
+  text-align: center;
+}
+.weather-forecats-temperature-max {
+  color: black;
+  font-size: 15px;
+}
+.weather-forecats-temperature-min {
+  color: grey;
+  font-size: 14px;
+}
+.icon {
+  display: block;
   margin: 0 auto;
 }
