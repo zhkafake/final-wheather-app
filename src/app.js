@@ -26,7 +26,6 @@ function formatDay(timestamp) {
     "Friday",
     "Saturday",
   ];
-
   return days[day];
 }
 function getForecast(coordinates) {

@@ -3,7 +3,7 @@ ul {
   margin: 0;
 }
 body {
-  background: rgb(254, 254, 200);
+  background: rgb(169, 169, 169);
 }
 .condition {
   text-transform: capitalize;
@@ -26,7 +26,7 @@ body {
   color: rgb(0, 0, 0);
 }
 .weather-app {
-  max-width: 94%;
+  max-width: 98%;
   margin-top: 20px;
   margin-bottom: 0px;
   padding: 20px;
@@ -67,4 +67,9 @@ body {
 .icon {
   display: block;
   margin: 0 auto;
+}
+.forecast-style {
+  width: fit-content;
+  min-width: 16%;
+  position: relative;
 }
