@@ -79,22 +79,6 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#cityTyped");
   search(cityInputElement.value);
 }
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#tempo");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahrenheitTemperature);
-}
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperature = document.querySelector("#tempo");
-  temperature.innerHTML = celsiusTemperature;
-}
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row"/>`;
@@ -114,10 +98,10 @@ function displayForecast(response) {
               class="icon"
             />
             <div class="weather-forecats-temperatures">
-              <span class="weather-forecats-temperature-max">${Math.round(
+              <span class="weather-forecats-temperature-max" id ="unit-conversion-max">${Math.round(
                 forecastDay.temp.max
               )}° </span>
-              <span class="weather-forecats-temperature-min">${Math.round(
+              <span class="weather-forecats-temperature-min" id ="unit-conversion-min">${Math.round(
                 forecastDay.temp.min
               )}°</span>
             </div>
@@ -131,8 +115,4 @@ function displayForecast(response) {
 let celsiusTemperature = null;
 let searchForm = document.querySelector("#searchEngine");
 searchForm.addEventListener("submit", handleSubmit);
-let fahrenheitLink = document.querySelector("#fahrenheit");
-let celsiusLink = document.querySelector("#celsius");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-celsiusLink.addEventListener("click", showCelsiusTemperature);
 search("Kyiv");
